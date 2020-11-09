@@ -11,6 +11,18 @@
 #ifndef VERSION_BUILD
 #define VERSION_BUILD 3
 #endif
+
+
+#ifndef ONE_WIRE_BUS
+#define ONE_WIRE_BUS 33
+#endif
+#ifndef TEMPERATURE_PRECISION
+#define TEMPERATURE_PRECISION 9
+#endif
+
+
+
+
 #include <Arduino.h>
 
 const String fwVersion = (const String)VERSION_MAJOR + "." + VERSION_MINOR + "." + VERSION_BUILD;
@@ -22,9 +34,6 @@ void printDevInfo();
 
 #include <OneWire.h>
 #include <DallasTemperature.h>
-
-#define ONE_WIRE_BUS 33
-#define TEMPERATURE_PRECISION 9
 
 // Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
 OneWire oneWire(ONE_WIRE_BUS);
